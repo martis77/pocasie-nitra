@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+  Nitra Weather Dashboard
+</title>
+
+<link
+  rel="stylesheet"
+  href="style.css"
+>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="dashboard">
+
+  <!-- HEADER -->
+
+  <div class="header">
+
+    <div>
+
+      <div class="logo">
+        NITRA WEATHER
+      </div>
+
+      <div class="header-subtitle">
+        Profesionálny live meteorologický dashboard
+      </div>
+
+    </div>
+
+    <div class="live-status">
+      LIVE
+    </div>
+
+  </div>
+
+  <!-- HERO -->
+
+  <div class="hero-card">
+
+    <div>
+
+      <div
+        class="main-temp"
+        id="temp"
+      >
+        --°
+      </div>
+
+      <div class="weather-type">
+        Jasná obloha
+      </div>
+
+      <div class="city">
+        Nitra, Slovensko
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+
+      <div class="update-box">
+
+        Aktualizované
+
+        <span id="updatedTime">
+          --:--
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- WEATHER GRID -->
+
+  <div class="weather-grid">
+
+    <div class="weather-card">
+
+      <div class="card-title">
+        Vlhkosť
+      </div>
+
+      <div
+        class="card-value"
+        id="humidity"
+      >
+        --%
+      </div>
+
+    </div>
+
+    <div class="weather-card">
+
+      <div class="card-title">
+        Rýchlosť vetra
+      </div>
+
+      <div
+        class="card-value"
+        id="wind"
+      >
+        -- km/h
+      </div>
+
+    </div>
+
+    <div class="weather-card">
+
+      <div class="card-title">
+        Nárazový vietor
+      </div>
+
+      <div
+        class="card-value"
+        id="windGust"
+      >
+        -- km/h
+      </div>
+
+    </div>
+
+    <div class="weather-card">
+
+      <div class="card-title">
+        Smer vetra
+      </div>
+
+      <div
+        class="card-value"
+        id="windDirection"
+      >
+        SZ
+      </div>
+
+    </div>
+
+    <div class="weather-card">
+
+      <div class="card-title">
+        Pravdepodobnosť dažďa
+      </div>
+
+      <div
+        class="card-value"
+        id="rain"
+      >
+        --%
+      </div>
+
+    </div>
+
+    <div class="weather-card">
+
+      <div class="card-title">
+        Atmosférický tlak
+      </div>
+
+      <div
+        class="card-value"
+        id="pressure"
+      >
+        -- hPa
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- GRAPH -->
+
+  <div class="graph-card">
+
+    <div class="section-title">
+      Vývoj teploty počas týždňa
+    </div>
+
+    <div class="graph-wrapper">
+
+      <canvas id="weatherChart"></canvas>
+
+    </div>
+
+  </div>
+
+  <!-- FORECAST -->
+
+  <div class="forecast-box">
+
+    <div class="section-title">
+      Predpoveď počasia na 7 dní
+    </div>
+
+    <div
+      class="forecast-grid"
+      id="forecastGrid"
+    ></div>
+
+  </div>
+
+  <!-- WIND MAP -->
+
+  <div class="map-card">
+
+    <div class="section-title">
+      Veterná mapa • Nitra
+    </div>
+
+    <iframe
+      src="https://embed.windy.com/embed2.html?lat=48.3076&lon=18.0845&detailLat=48.3076&detailLon=18.0845&width=1200&height=500&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=true&calendar=&pressure=&type=map&location=coordinates&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1"
+    ></iframe>
+
+  </div>
+
+  <!-- RAIN MAP -->
+
+  <div class="map-card">
+
+    <div class="section-title">
+      Zrážková mapa • Nitra
+    </div>
+
+    <iframe
+      src="https://embed.windy.com/embed2.html?lat=48.3076&lon=18.0845&detailLat=48.3076&detailLon=18.0845&width=1200&height=500&zoom=10&level=surface&overlay=rain&product=ecmwf&menu=&message=true&marker=true&calendar=&pressure=&type=map&location=coordinates&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1"
+    ></iframe>
+
+  </div>
+
+</div>
+
+<script src="weather.js"></script>
+
+</body>
+</html>
